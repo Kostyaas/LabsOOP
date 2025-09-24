@@ -1,4 +1,4 @@
-using Itmo.ObjectOrientedProgramming.Lab1.Trasport;
+using Lab1.Trasport;
 
 namespace Lab1.Road;
 
