@@ -1,4 +1,4 @@
-using Itmo.ObjectOrientedProgramming.Lab1.Trasport.Implementation;
+using Lab1.Trasport.Implementation;
 using System.Collections.ObjectModel;
 
 namespace Lab1.Road;
