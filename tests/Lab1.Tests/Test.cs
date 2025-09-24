@@ -4,7 +4,7 @@ using Lab1.Road.Implementation.TypeRule;
 using Lab1.Trasport.Implementation;
 using Xunit;
 
-namespace Lab1.Road;
+namespace Itmo.ObjectOrientedProgramming.Lab1.Tests;
 
 public class Test
 {
