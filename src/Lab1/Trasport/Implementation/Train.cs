@@ -10,14 +10,14 @@ public class Train : ITransport
 
     private int CurrentPower { get; set; }
 
-    public Train(int weight = 1, int maxStrength = 0)
+    public Train(int weight, int maxStrength)
     {
         Weight = weight <= 0 ? 1 : weight;
         Speed = 0;
         MaxStrength = maxStrength;
     }
 
-    public bool IsSetPower(int strength)
+    public bool SetPower(int strength)
     {
         if (strength > MaxStrength)
         {

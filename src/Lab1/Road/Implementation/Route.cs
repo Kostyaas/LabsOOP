@@ -24,7 +24,7 @@ public class Route
             return false;
         }
 
-        isGoodRoad &= ApplyRule(_elements[indexRoad]);
+        isGoodRoad &= IsApplyRule(_elements[indexRoad]);
         int tempPath = _elements[indexRoad].Lenght;
         while (_train.IsMove() && indexRoad < _elements.Count)
         {
@@ -32,15 +32,15 @@ public class Route
             if (tempPath > 0) continue;
             ++indexRoad;
             if (indexRoad >= _elements.Count) continue;
-            isGoodRoad &= ApplyRule(_elements[indexRoad]);
+            isGoodRoad &= IsApplyRule(_elements[indexRoad]);
             tempPath = _elements[indexRoad].Lenght;
         }
 
         return (_train.IsMove() || indexRoad >= _elements.Count) && isGoodRoad;
     }
 
-    private bool ApplyRule(IElementRoad road)
+    private bool IsApplyRule(IElementRoad road)
     {
-        return road.Rules.Aggregate(true, (current, rule) => current & rule.Apply(_train));
+        return road.Rules.Aggregate(true, (current, rule) => current & rule.IsApply(_train));
     }
 }

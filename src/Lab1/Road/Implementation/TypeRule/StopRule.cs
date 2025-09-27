@@ -9,7 +9,7 @@ public class StopRule : IRule<Train>
         Value = value;
     }
 
-    public bool Apply(Train transport)
+    public bool IsApply(Train transport)
     {
         return transport.Speed <= Value;
     }
