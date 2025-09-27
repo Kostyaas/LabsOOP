@@ -13,7 +13,7 @@ public class StrengthRule : IRule<Train>
 
     public bool Apply(Train transport)
     {
-        transport.SetPower(Value);
+        transport.IsSetPower(Value);
         return true;
     }
 }
