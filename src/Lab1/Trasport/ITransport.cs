@@ -6,7 +6,7 @@ public interface ITransport
 
     int Weight { get; }
 
-    bool Move();
+    bool IsMove();
 }
 
 public abstract class TransportBase : ITransport
@@ -21,11 +21,12 @@ public abstract class TransportBase : ITransport
         Speed = 0;
     }
 
-    public abstract bool Move();
+    public abstract bool IsMove();
 
     protected virtual void Accelerate(int acceleration, int time)
     {
         Speed += acceleration * time;
-        if (Speed < 0) Speed = 0;
+        if (Speed < 0)
+            Speed = 0;
     }
 }

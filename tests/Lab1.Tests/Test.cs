@@ -15,7 +15,7 @@ public class Test
             new Train(1, 5),
             new DefaultSectionRoad(10),
             new Station(new StopRule(5)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.False(res);
     }
 
@@ -26,7 +26,7 @@ public class Test
             new Train(1, 5),
             new PowerSectionRoad(5, new StrengthRule(2)),
             new Station(new StopRule(5)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.True(res);
     }
 
@@ -38,7 +38,7 @@ public class Test
             new PowerSectionRoad(5, new StrengthRule(2)),
             new DefaultSectionRoad(10),
             new Station(new StopRule(5)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.True(res);
     }
 
@@ -51,7 +51,7 @@ public class Test
             new Station(new StopRule(5)),
             new DefaultSectionRoad(10),
             new Station(new StopRule(5)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.False(res);
     }
 
@@ -61,7 +61,7 @@ public class Test
         var route = new Route(
             new Train(1, 5),
             new Station(new StopRule(5)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.False(res);
     }
 
@@ -72,7 +72,7 @@ public class Test
             new Train(1, 2),
             new PowerSectionRoad(6, new StrengthRule(100000)),
             new Station(new StopRule(6)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.True(res);
     }
 
@@ -84,7 +84,7 @@ public class Test
             new Station(new StopRule(6), new StrengthRule(2)),
             new DefaultSectionRoad(10),
             new Station(new StopRule(10)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.True(res);
     }
 
@@ -97,7 +97,7 @@ public class Test
             new DefaultSectionRoad(10),
             new DefaultSectionRoad(10, new StrengthRule(-1)),
             new Station(new StopRule(100000)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.False(res);
     }
 
@@ -110,7 +110,7 @@ public class Test
             new DefaultSectionRoad(10),
             new DefaultSectionRoad(8, new StrengthRule(-1)),
             new Station(new StopRule(2)));
-        bool res = route.Go();
+        bool res = route.IsGo();
         Assert.False(res);
     }
 }

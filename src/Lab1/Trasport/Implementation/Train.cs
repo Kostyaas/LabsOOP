@@ -23,11 +23,10 @@ public class Train : TransportBase
         return true;
     }
 
-    public override bool Move()
+    public override bool IsMove()
     {
         int acceleration = CurrentPower / Weight;
         Accelerate(acceleration, 1);
-        Console.WriteLine($"{Speed} \n");
         return Speed > 0;
     }
 }

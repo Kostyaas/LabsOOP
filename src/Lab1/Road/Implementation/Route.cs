@@ -15,21 +15,20 @@ public class Route
         _train = train;
     }
 
-    public bool Go()
+    public bool IsGo()
     {
         int indexRoad = 0;
         bool isGoodRoad = true;
         if (_elements.Count == 0)
         {
-            Console.WriteLine("Маршрут пуст! Неудача.");
             return false;
         }
 
         isGoodRoad &= ApplyRule(_elements[indexRoad]);
         int tempPath = _elements[indexRoad].Lenght;
-        while (_train.Move() && indexRoad < _elements.Count)
+        while (_train.IsMove() && indexRoad < _elements.Count)
         {
-            tempPath -= _train.Speed;
+            tempPath -= _train.Speed * 1;
             if (tempPath > 0) continue;
             ++indexRoad;
             if (indexRoad >= _elements.Count) continue;
@@ -37,7 +36,7 @@ public class Route
             tempPath = _elements[indexRoad].Lenght;
         }
 
-        return (_train.Move() || indexRoad >= _elements.Count) && isGoodRoad;
+        return (_train.IsMove() || indexRoad >= _elements.Count) && isGoodRoad;
     }
 
     private bool ApplyRule(IElementRoad road)
