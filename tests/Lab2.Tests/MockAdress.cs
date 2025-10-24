@@ -6,11 +6,11 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Tests;
 
 public class MockAdress : IAdress
 {
-    private readonly List<Message> _receivedMessages = new();
+    private readonly List<Message> _receivedMessages = [];
 
     public ReadOnlyCollection<Message> ReceivedMessages => _receivedMessages.AsReadOnly();
 
-    public int CallCount { get; private set; }
+    public int CallCount { get; set; }
 
     public void GetMessage(Message message)
     {

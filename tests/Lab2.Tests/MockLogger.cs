@@ -6,11 +6,11 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Tests;
 
 public class MockLogger : ILogger
 {
-    private readonly List<Message> _loggedMessages = new();
+    private readonly List<Message> _loggedMessages = [];
 
     public ReadOnlyCollection<Message> LoggedMessages => _loggedMessages.AsReadOnly();
 
-    public int CallCount { get; private set; }
+    public int CallCount { get; set; }
 
     public void Logger(Message massage)
     {

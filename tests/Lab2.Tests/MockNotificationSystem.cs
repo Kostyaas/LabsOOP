@@ -6,11 +6,11 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Tests;
 
 public class MockNotificationSystem : INotificationSystem
 {
-    private readonly List<Message> _notifiedMessages = new();
+    private readonly List<Message> _notifiedMessages = [];
 
     public ReadOnlyCollection<Message> NotifiedMessages => _notifiedMessages.AsReadOnly();
 
-    public int CallCount { get; private set; }
+    public int CallCount { get; set; }
 
     public void Notify(Message message)
     {

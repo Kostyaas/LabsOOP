@@ -5,7 +5,7 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Arhivators;
 
 public class CollectionArhivator : IMessageArhivator
 {
-    private readonly List<Message> _messages = new();
+    private readonly List<Message> _messages = [];
 
     public IReadOnlyList<Message> Messages => _messages.AsReadOnly();
 

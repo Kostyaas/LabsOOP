@@ -5,7 +5,7 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Formaters;
 
 public abstract class BaseMessageFormatter : IMessageFormatter
 {
-    protected TextWriter Output { get; }
+    private TextWriter Output { get; }
 
     protected BaseMessageFormatter(TextWriter outputWriter)
     {

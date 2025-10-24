@@ -6,11 +6,11 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Tests;
 
 public class MockMessageArhivator : IMessageArhivator
 {
-    private readonly List<Message> _archivedMessages = new();
+    private readonly List<Message> _archivedMessages = [];
 
     public ReadOnlyCollection<Message> ArchivedMessages => _archivedMessages.AsReadOnly();
 
-    public int CallCount { get; private set; }
+    public int CallCount { get; set; }
 
     public void Arhivating(Message message)
     {

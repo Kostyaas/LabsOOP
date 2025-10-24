@@ -6,9 +6,9 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Tests;
 
 public class MockMessageFormatter : IMessageFormatter
 {
-    private readonly List<Message> _formattedMessages = new();
-    private readonly List<string> _writtenTitles = new();
-    private readonly List<string> _writtenBodies = new();
+    private readonly List<Message> _formattedMessages = [];
+    private readonly List<string> _writtenTitles = [];
+    private readonly List<string> _writtenBodies = [];
 
     public ReadOnlyCollection<Message> FormattedMessages => _formattedMessages.AsReadOnly();
 
@@ -16,11 +16,11 @@ public class MockMessageFormatter : IMessageFormatter
 
     public ReadOnlyCollection<string> WrittenBodies => _writtenBodies.AsReadOnly();
 
-    public int FormatCallCount { get; private set; }
+    public int FormatCallCount { get; set; }
 
-    public int WriteTitleCallCount { get; private set; }
+    public int WriteTitleCallCount { get; set; }
 
-    public int WriteBodyCallCount { get; private set; }
+    public int WriteBodyCallCount { get; set; }
 
     public void Format(Message message)
     {
