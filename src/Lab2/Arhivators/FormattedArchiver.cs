@@ -5,15 +5,15 @@ namespace Itmo.ObjectOrientedProgramming.Lab2.Arhivators;
 
 public class FormattedArchiver : IMessageArhivator
 {
-    private readonly IMessageFormatter formater;
+    private readonly IMessageFormatter _formater;
 
     public FormattedArchiver(IMessageFormatter formatter)
     {
-        this.formater = formatter;
+        _formater = formatter;
     }
 
     public void Arhivating(Message message)
     {
-        formater.Format(message);
+        _formater.Format(message);
     }
 }

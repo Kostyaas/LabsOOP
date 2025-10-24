@@ -9,7 +9,7 @@ public class ArhivatorAdresses : IAdress
 
     public ArhivatorAdresses(IMessageArhivator arhivator)
     {
-        this.Arhivator = arhivator;
+        Arhivator = arhivator;
     }
 
     public void GetMessage(Message message)
