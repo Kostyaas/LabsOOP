@@ -25,7 +25,7 @@ public class FightResult
 
     public void AddRoundLog(string log)
     {
-        _roundLogs.Add(log); // ✅ Добавляем в приватный список, а не в ReadOnlyCollection
+        _roundLogs.Add(log);
     }
 
     public void PrintResult()

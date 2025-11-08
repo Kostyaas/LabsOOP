@@ -74,7 +74,6 @@ public class Fight
             result.AddRoundLog($"{attackerName}: {attacker.Name} атакует {defenderName}: {target.Name} " +
                                $"(урон: {damageDealt}, осталось HP: {target.Health})");
 
-            // Если защитник умер, логируем это
             if (!target.IsAlive)
             {
                 result.AddRoundLog($"⚰ {defenderName}: {target.Name} погиб!");
