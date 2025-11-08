@@ -8,7 +8,7 @@ public interface ICreature : ICreaturePrototype<ICreature>
 
     int Health { get; }
 
-    IWeapon Weapon { get;  }
+    IWeapon Weapon { get; }
 
     bool IsAlive { get; }
 

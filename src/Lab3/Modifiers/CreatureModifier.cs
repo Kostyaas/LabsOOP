@@ -51,7 +51,7 @@ public abstract class CreatureModifier : ICreature
 
     public ICreature Clone()
     {
-        var clone = (CreatureModifier)this.MemberwiseClone();
+        var clone = (CreatureModifier)MemberwiseClone();
 
         clone.Weapon = Weapon.Clone();
 

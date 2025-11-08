@@ -59,13 +59,12 @@ public class Fight
         if (attackers.Count == 0 || defenders.Count == 0)
             return;
 
-        foreach (ICreature? attacker in attackers)
+        foreach (ICreature attacker in attackers)
         {
             if (!defenders.Any(d => d.IsAlive))
                 break;
 
             var aliveDefenders = defenders.Where(d => d.IsAlive).ToList();
-            var random = new Random();
             int targetIndex = RandomNumberGenerator.GetInt32(0, aliveDefenders.Count);
             ICreature target = aliveDefenders[targetIndex];
             int damageBefore = target.Health;

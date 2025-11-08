@@ -2,7 +2,7 @@ using Itmo.ObjectOrientedProgramming.Lab3.Сreature;
 
 namespace Itmo.ObjectOrientedProgramming.Lab3.Weapon;
 
-public interface IWeapon : ICloneWeapon<IWeapon>
+public interface IWeapon : ICloneWeapon
 {
     void Shoot(ICreature target);
 
