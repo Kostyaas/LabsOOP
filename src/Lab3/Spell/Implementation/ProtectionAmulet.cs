@@ -3,7 +3,7 @@ using Itmo.ObjectOrientedProgramming.Lab3.Сreature;
 
 namespace Itmo.ObjectOrientedProgramming.Lab3.Spell.Implementation;
 
-public class ProtectionAmulet : ISpellModifier
+public class ProtectionAmulet : ISpell
 {
     public ICreature Cast(ICreature creature)
     {

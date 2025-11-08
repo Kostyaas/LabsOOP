@@ -3,11 +3,12 @@ using Itmo.ObjectOrientedProgramming.Lab3.Сreature;
 
 namespace Itmo.ObjectOrientedProgramming.Lab3.Spell.Implementation;
 
-public class StrengthPotion : ISpellFeature
+public class StrengthPotion : ISpell
 {
-    public void Cast(ICreature creature)
+    public ICreature Cast(ICreature creature)
     {
         IWeapon weapon = creature.Weapon;
         weapon.UpdateDamage(weapon.GetDamage() + 5);
+        return creature;
     }
 }

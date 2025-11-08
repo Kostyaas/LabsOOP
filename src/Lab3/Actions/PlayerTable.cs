@@ -58,23 +58,12 @@ public class PlayerTable
         return _creatures.Select(creature => creature.Clone()).ToList();
     }
 
-    public bool ApplySpellToCreature(ISpellModifier spell, int index)
+    public bool ApplySpellToCreature(ISpell spell, int index)
     {
         if (index >= 0 && index < MaxCreatures)
         {
             ICreature modifiedCreature = spell.Cast(_creatures[index]);
             _creatures[index] = modifiedCreature;
-            return true;
-        }
-
-        return false;
-    }
-
-    public bool ApplySpellToCreature(ISpellFeature spell, int index)
-    {
-        if (index >= 0 && index < MaxCreatures)
-        {
-            spell.Cast(_creatures[index]);
             return true;
         }
 

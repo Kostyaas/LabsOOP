@@ -2,7 +2,7 @@ using Itmo.ObjectOrientedProgramming.Lab3.Сreature;
 
 namespace Itmo.ObjectOrientedProgramming.Lab3.Spell;
 
-public interface ISpellFeature
+public interface ISpell
 {
-    void Cast(ICreature creature);
+    ICreature Cast(ICreature creature);
 }
