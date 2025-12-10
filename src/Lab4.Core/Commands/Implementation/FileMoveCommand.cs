@@ -4,7 +4,7 @@ namespace Itmo.ObjectOrientedProgramming.Lab4.Core.Commands.Implementation;
 
 public class FileMoveCommand : ICommand
 {
-    public string[] Pattern { get; } = ["SourcePath",  "DestinationPath"];
+    public string[] Pattern { get; } = ["SourcePath", "DestinationPath"];
 
     public string Name => "file move";
 
