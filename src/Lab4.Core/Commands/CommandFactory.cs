@@ -18,11 +18,10 @@ public class CommandFactory
         RegisterCommand<TreeGotoCommand>("tree goto");
         RegisterCommand<TreeListCommand>("tree list");
         RegisterCommand<FileShowCommand>("file show");
-
-        // RegisterCommand<FileMoveCommand>("file move");
-        // RegisterCommand<FileCopyCommand>("file copy");
-        // RegisterCommand<FileDeleteCommand>("file delete");
-        // RegisterCommand<FileRenameCommand>("file rename");
+        RegisterCommand<FileMoveCommand>("file move");
+        RegisterCommand<FileCopyCommand>("file copy");
+        RegisterCommand<FileDeleteCommand>("file delete");
+        RegisterCommand<FileRenameCommand>("file rename");
     }
 
     public ICommand? CreateCommand(string name)

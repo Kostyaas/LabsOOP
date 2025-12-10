@@ -4,13 +4,15 @@ namespace Itmo.ObjectOrientedProgramming.Lab4.Core.Commands.Implementation;
 
 public class TreeGotoCommand : ICommand
 {
+    public string[] Pattern { get; } = ["Path"];
+
     public string Name => "tree goto";
 
     public string Description => "Выполняет переход до указанного пути";
 
     public CommandResult Execute(CommandContext context)
     {
-        if (!context.Parameters.TryGetValue("path", out string? path))
+        if (!context.Parameters.TryGetValue("Path", out string? path))
         {
             return CommandResult.ErrorResult("Не указан путь к файлу");
         }
@@ -41,13 +43,5 @@ public class TreeGotoCommand : ICommand
         context.CurrentPath = newPath;
 
         return CommandResult.SuccessResult($"Переход из '{oldPath}' в '{newPath}'");
-    }
-
-    public (Dictionary<string, string> Parameters, Dictionary<string, string> Flags) ParseForCommand(string[] args)
-    {
-        var parameters = new Dictionary<string, string>();
-        var flags = new Dictionary<string, string>();
-        parameters.Add("path", args[0]);
-        return (parameters, flags);
     }
 }

@@ -6,6 +6,8 @@ namespace Itmo.ObjectOrientedProgramming.Lab4.Core.Commands.Implementation;
 
 public class TreeListCommand : ICommand
 {
+    public string[] Pattern { get; } = [];
+
     public string Name => "tree list";
 
     public string Description => "Выводит содержимое директории в виде дерева";
@@ -13,22 +15,15 @@ public class TreeListCommand : ICommand
     public CommandResult Execute(CommandContext context)
     {
         int depth = 1;
-        string depthStr = context.Parameters["-d"];
+        string depthStr = context.Flags["-d"];
         if (int.TryParse(depthStr, out int parsedDepth) && parsedDepth > 0)
         {
             depth = parsedDepth;
         }
 
+        Console.WriteLine(depth);
         string tree = BuildTree(context.FileSystem, context.CurrentPath, depth);
         return CommandResult.SuccessResult(tree);
-    }
-
-    public (Dictionary<string, string> Parameters, Dictionary<string, string> Flags) ParseForCommand(string[] args)
-    {
-        var parameters = new Dictionary<string, string>();
-        var flags = new Dictionary<string, string>();
-        parameters.Add("-d", args[0]);
-        return (parameters, flags);
     }
 
     private string BuildTree(IFileSystem fs, string path, int depth, int currentDepth = 0, string prefix = "", bool isLast = true)

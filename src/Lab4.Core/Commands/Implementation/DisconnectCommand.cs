@@ -4,6 +4,8 @@ namespace Itmo.ObjectOrientedProgramming.Lab4.Core.Commands.Implementation;
 
 public class DisconnectCommand : ICommand
 {
+    public string[] Pattern { get; } = [];
+
     public string Name => "Disconnect";
 
     public string Description => "Отключается от файловой системы";
@@ -17,13 +19,5 @@ public class DisconnectCommand : ICommand
         }
 
         return CommandResult.SuccessResult("Отключено от файловой системы.");
-    }
-
-    public (Dictionary<string, string> Parameters, Dictionary<string, string> Flags) ParseForCommand(string[] args)
-    {
-        var parameters = new Dictionary<string, string>();
-        var flags = new Dictionary<string, string>();
-
-        return (parameters, flags);
     }
 }

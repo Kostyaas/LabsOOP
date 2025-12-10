@@ -27,16 +27,15 @@ public class LocalFileSystem : IFileSystem
 
         var items = new List<string>();
 
-        IEnumerable<string> directories = Directory.GetDirectories(path)
+        items.AddRange(Directory.GetDirectories(path)
             .Select(Path.GetFileName)
             .Where(name => name is not null)
-            .Cast<string>();
+            .Cast<string>());
 
-        IEnumerable<string> files = Directory.GetFiles(path)
+        items.AddRange(Directory.GetFiles(path)
             .Select(Path.GetFileName)
             .Where(name => name is not null)
-            .Cast<string>();
-        items.AddRange(files);
+            .Cast<string>());
 
         return items.AsReadOnly();
     }

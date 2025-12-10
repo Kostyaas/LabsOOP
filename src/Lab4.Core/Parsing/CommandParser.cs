@@ -33,7 +33,20 @@ public class CommandParser
 
     private ParsedCommand ParseArguments(ICommand command, string[] args)
     {
-        (Dictionary<string, string> parameters, Dictionary<string, string> flags) = command.ParseForCommand(args);
+        string[] pattern = command.Pattern;
+        var flags = new Dictionary<string, string>();
+
+        int currentIndex = 0;
+        Dictionary<string, string> parameters = pattern.ToDictionary(arg => arg, arg => args[currentIndex++]);
+
+        for (; currentIndex < args.Length; ++currentIndex)
+        {
+            if (!args[currentIndex].StartsWith('-')) continue;
+            string flagname = args[currentIndex++];
+            string flag = args[currentIndex];
+            flags.Add(flagname, flag);
+        }
+
         return new ParsedCommand(command, parameters, flags);
     }
 
