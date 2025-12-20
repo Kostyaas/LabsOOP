@@ -9,6 +9,8 @@ public static class Program
 {
     public static void Main(string[] args)
     {
+        Console.WriteLine("Hello World!");
+
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddApplicationServices("admin123");

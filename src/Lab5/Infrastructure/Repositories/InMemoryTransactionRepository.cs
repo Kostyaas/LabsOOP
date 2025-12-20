@@ -22,7 +22,7 @@ public class InMemoryTransactionRepository : ITransactionRepository
 
     public Task<IEnumerable<Transaction>> GetByAccountIdAsync(Guid accountId)
     {
-        if (_transactionsByAccount.TryGetValue(accountId, out var transactions))
+        if (_transactionsByAccount.TryGetValue(accountId, out List<Transaction>? transactions))
         {
             return Task.FromResult<IEnumerable<Transaction>>(transactions.OrderByDescending(t => t.Timestamp));
         }

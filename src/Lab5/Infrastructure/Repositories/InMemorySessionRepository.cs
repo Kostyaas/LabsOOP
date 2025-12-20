@@ -9,7 +9,7 @@ public class InMemorySessionRepository : ISessionRepository
 
     public Task<Session?> GetByIdAsync(Guid id)
     {
-        _sessions.TryGetValue(id, out var session);
+        _sessions.TryGetValue(id, out Session? session);
         return Task.FromResult(session);
     }
 

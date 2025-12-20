@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <RootNamespace>Itmo.ObjectOrientedProgramming.Lab5</RootNamespace>
+        <OutputType>Exe</OutputType>
     </PropertyGroup>
 
     <ItemGroup>
